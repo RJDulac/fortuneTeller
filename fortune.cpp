@@ -9,30 +9,13 @@ enum fortune
     job
 
 };
-void getFortune()
-{
-    srand(time(NULL));
-    int random = rand() % 3;
-    switch (fortune(random))
-    {
-    case money:
-        cout << "You will recieve large sums of money." << endl;
-        break;
-    case love:
-        cout << "You will find true love." << endl;
-        break;
-    case job:
-        cout << "You will get a promotion at work!" << endl;
-        break;
-    default:
-        cout << "something went wrong";
-    }
-}
+void getFortune();
+
 int main()
 {
 
     bool isTelling = true;
-    char input = ' ';
+    char input = '\0';
     while (isTelling)
     {
         if (input != 'y')
@@ -54,4 +37,23 @@ int main()
     }
 
     return 0;
+}
+void getFortune()
+{
+    srand(time(NULL));
+    int random = rand() % 3;
+    switch (fortune(random))
+    {
+    case money:
+        cout << "You will recieve large sums of money." << endl;
+        break;
+    case love:
+        cout << "You will find true love." << endl;
+        break;
+    case job:
+        cout << "You will get a promotion at work!" << endl;
+        break;
+    default:
+        cout << "something went wrong";
+    }
 }
